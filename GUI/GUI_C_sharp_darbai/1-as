@@ -1,0 +1,18 @@
+
+Pirma praktinė užduotis
+
+Restoranas nusprendė įdiegti sistemą „e-meniu“, leidžiančią atsisakyti įprastų popierinių meniu. Klientai nuo šiol užsakymus pateiks elektroniniu būdu. Restoranas įsigijo planšetinius kompiuterius „Asus MeMO Pad Smart 10 ME301T“, kurie bus pririšti prie atitinkamų staliukų ir skirti restorano lankytojams atlikti užsakymus.
+
+Jūsų pirmoji užduotis sukurti „e-meniu“ sistemos funkcionuojantį prototipą, kuriame būtų realizuotos šios funkcijos:
+
+Detalios informacijos apie patiekalą (nuotrauka, aprašymas) pateikimas
+Patiekalo užsakymas (įdėjimas į "krepšelį")
+Patiekalo pašalinimas iš „krepšelio“
+Mokėtinos sumos apskaičiavimas
+Užsakymo patvirtinimas
+Padavėjos iškvietimas
+Papildomo patiekalo užsakymas patvirtinus užsakymą
+Sąskaitos apmokėjimas.
+Restorane patiekiami: trijų tipų gėrimai (gaivieji, karštieji ir alkoholiniai) ir 5 tipų patiekalai (sriubos, užkandėlės, salotos, karštieji patiekalai ir desertas).
+
+Atsiskaitymas pirmąją kovo mėn. savaitę.

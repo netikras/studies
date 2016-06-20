@@ -1,0 +1,31 @@
+#!/bin/bash
+
+<<-DESCRIPTION
+4. Sudarykite shell procedūrą, kuri priimtų argumentą - failo-vardą ir grąžintų:
+	• pranešimą apie klaidą, jei failo nėra einamajame kataloge;
+	• komentarą apie tai, ar šis failas yra paprastas failas, ar katalogas;
+	• komentarą apie tai, ar šis failas tuščias, ar ne.
+DESCRIPTION
+
+failas="$1";
+klaida=0;
+
+ls -l "$failas" &>/dev/null || klaida=1;
+
+if [ "$klaida" == "1" ]; then
+	echo -ne "\n\tNerandu tokio failo: $failas\n\n" |grep --color . >&2;
+else
+	data=$(ls -lhd "$failas");
+	if [ "$(echo $data |egrep -c ^d)" == "1" ]; then
+		echo -ne "\n KATALOGAS: '$failas'\n\n";
+	else
+		if [ "$(echo $data |awk '{print $5}')" == "0" ]; then
+			echo -ne "\n TUŠČIAS FAILAS: '$failas'\n\n";
+		else
+			echo -ne "\n NETUŠČIAS FAILAS: '$failas'\n\n";
+		fi;
+	fi;
+	
+fi;
+
+exit 0;

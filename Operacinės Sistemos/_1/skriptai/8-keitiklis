@@ -1,0 +1,28 @@
+#!/bin/bash
+
+<<-DESCRIPTION
+8. Sudarykite shell’o procedūrą, kuri masyve sukeistų vietomis du gretimus
+elementus, o minimalaus elemento vietoje įrašytu procedūros ilgio baitais reikšmę. Procedūroje
+pagal galimybes naudokite while ciklą.
+DESCRIPTION
+
+
+echo "Įveskite masyvo elementus";
+read ELEM;
+
+if [ "$ELEM" == "" ]; then
+	echo -ne "\nNeįvedėte masyvo!\n\n"|grep --color . >&2;
+	exit 1;
+fi;
+
+mas=(${ELEM// / });
+mas_l=${#mas[@]};
+
+i=0;
+while (( i < $mas_l )); do
+	
+	echo -ne "${mas[$(($i+1))]} ";
+	echo -ne "${mas[$i]} ";
+	i=$((i+2));
+done;
+echo;

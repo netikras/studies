@@ -1,0 +1,7 @@
+﻿ZonesCount=5
+TablesInZone=6
+MasterPORT=1999
+//SingleZoneMode=false
+ZoneID=5
+//StaticMasterIP=192.168.1.12
+StaticMasterIP=127.0.0.1

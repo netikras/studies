@@ -1,0 +1,189 @@
+#!/bin/bash
+
+<<-COMMENT
+
+BASH skriptas, sukuriantis primityvią "telefonų knygą"
+ir įgalinantis atlikti su jos įrašais pagrindines operacijas.
+
+
+COMMENT
+
+clear;
+echo -en "\033[?25l";
+
+FOLDER=adresatai;
+DB_FILE=$FOLDER/dbase;
+
+if [ ! -d "$FOLDER" ]; then mkdir -p $FOLDER; fi;
+if [ ! -f "$DB_FILE" ]; then touch $DB_FILE; fi;
+
+## Šį masyvą galima redaguoti pagal poreikius. 
+## Masyvo elementų skaičius būtinai turi būti lyginis.
+## Lyginiai elementai - laukų pavadinimai; nelyginiai - reikšmės.
+DATA=( 'Vardas' '-' 'Pavardė' '-' 'Namų tel.' '-' 'Darbo tel.' '-' 'Adresas' '-' 'Kita' '-' );
+DELIM=">:0:<";
+
+cls(){
+echo -en "\033c";
+}
+
+function MENIU {
+	cls;
+	echo -ne "\nSveiki,\nJūs dirbate su \"Telefonknygė v1.0\"\n\nMeniu:\n\
+	1\tSukurti naują kontaktą\n\
+	2\tRedaguoti esamą kontaktą\n\
+	3\tPašalinti kontaktą\n\
+	4\tPaieška\n\
+	\n\
+	0\tIšeiti iš \"Telefonknygė v1.0\"\n\
+> ";
+echo -en "\033[?25l";
+	read pasirinkimas;
+	
+	case $pasirinkimas in
+		0) cls;exit 1;;
+		1) NAUJAS;;
+		2) REDAGUOTI;;
+		3) PASALINTI;;
+		4) PAIESKA;;
+		*) MENIU;;
+	esac
+unset pasirinkimas;
+}
+
+function NAUJAS {
+	cls;echo "Naujas Kontaktas";
+
+	last_no="$(cat $DB_FILE | wc -l)";
+	next_no=$(($last_no+1));
+
+len=${#DATA[@]};
+BUFFER="$next_no.";
+echo; echo;
+	for((i=0; i<${#DATA[@]}; i++)); do
+		j=$i;
+		i=$(($i+1));
+		#read -e -p "${DATA[$j]}: " -i "${DATA[$i]}" DATA[$i];
+		read -e -p "${DATA[$j]}: " -i "" tempvar;  #DATA[$i];
+		if [ "${DATA[$i]}" == "0" ]; then return; fi;
+		#DATA[$i]="${DATA[$i]:=-}"; 		## Jei nieko neįvesta - sukuria default'inę reikšmę "-".
+		DATA[$i]="${tempvar:=-}"; 		## Jei nieko neįvesta - sukuria default'inę reikšmę "-".
+		BUFFER="$BUFFER$DELIM${DATA[$j]}$DELIM${DATA[$i]}";
+	done; 
+echo $BUFFER | sed "s/$DELIM//" >>$DB_FILE;
+#read NULL
+## Išvalome kintamuosius
+unset last_no next_no len BUFFER i j tempvar;
+}
+
+function PAIESKA {
+	if [  $1 ]; then fraze="$1"; else 
+		cls;echo "Paieška";
+		echo -ne "\n\n\tĮveskite ieškomą frazę: ";
+		read fraze;
+		fraze="${fraze:=.}";
+	fi;
+	
+	if [ $2 ]; then 
+		sortby="-k$(($2*2-1))";
+		echo -ne "\n\tSurūšiuota pagal: ${DATA[$(($2*2-2))]}\n\n\n"; 
+	else sortby=""; fi;
+
+	cat $DB_FILE 2>/dev/null| grep -i "$fraze" 2>/dev/null|sort -f -t"$(echo $DELIM|tail -c 2)" $sortby |while read  match ; do
+		for ((i=1; i<=${#DATA[@]}; i++)); do
+			echo $match | awk -F${DELIM} "{print \$$i\"   \t\"\$$(($i+1))}";
+			i=$(($i+1));
+		done
+		echo;
+	done
+
+	if [ -z $1 ] || [ $2 ]; then 
+		echo -ne "\n\n\n\tNorėdami rūšiuoti rezultatus pagal kurį nors lauką įveskite\n\
+norimo lauko eilės numerį.\n\
+Pvz.: \"2\" surūšiuos pagal laukelį: \"${DATA[$((2*2-2))]}\""|grep --color .;
+		read sorting;
+		if [ "$sorting" == "" ] || [ "$(echo $sorting | egrep -c "[[:alpha:]]")" != "0" ] || [ "$sorting" == "0" ]; then return; fi;
+		cls;
+		PAIESKA $fraze $sorting;
+	fi;
+## Išvalome panaudotus kintamuosius
+unset fraze sortby i sorting;
+}
+
+function REDAGUOTI {
+	cls; echo -ne "Redaguoti kontaktą\n\n";
+	PAIESKA .| egrep "Vardas";
+        echo -ne "\n\nPasirinkite vartotojo numerį, kurį norite redaguoti (įveskite 0 kad išeitumėte): ";
+        read usernum;
+	usernum="${usernum:=0}";
+        if [ "$usernum" == "0" ]; then return; fi;
+
+	match="$(cat $DB_FILE | egrep "^$usernum\.")";
+	m_arr=( $(echo $match |sed -e "s/$DELIM/\n/g"|sed s'/ /_/g') );
+		for((i=0; i<${#m_arr[@]}; i++)); do
+			j=$i;
+			i=$(($i+1));
+			m_arr[$i]="$(echo ${m_arr[$i]}|sed s'/_/ /g')";
+			m_arr[$j]="$(echo ${m_arr[$j]}|sed s'/_/ /g')";
+			read -e -p "${m_arr[$j]}: " -i "${m_arr[$i]}" tempvar;  # m_arr[$i];
+			#m_arr[$i]="${m_arr[$i]:=-}"; 		## Jei nieko neįvesta - sukuria default'inę reikšmę "-".
+			m_arr[$i]="${tempvar:=-}"; 		## Jei nieko neįvesta - sukuria default'inę reikšmę "-".
+			BUFFER="$BUFFER$DELIM${m_arr[$j]}$DELIM${m_arr[$i]}";
+		done; 
+
+	rep_to="$(echo "$BUFFER"|sed "s/$DELIM//")";
+	rep_from="$match";
+#	echo "from: $rep_from";
+#	echo "to  : $rep_to";
+echo -ne "\n\n\tIšsaugoti pakeitimus? \n[t/n]: ";
+read saugoti;
+saugoti="${saugoti:=n}";
+if [ "$saugoti" == "t" ]; then sed -i "s/$rep_from/$rep_to/" $DB_FILE; fi;
+## išvalome panaudotus kintamuosius
+unset usernum match m_arr j i BUFFER rep_to rep_from saugoti
+}
+
+
+function PASALINTI {
+	cls; echo -en "Pašalinti adresatą:\n\n";
+	PAIESKA .| egrep "Vardas";
+	echo -ne "\n\nPasirinkite vartotojo numerį, kurį norite šalinti (įveskite 0 kad išeitumėte): ";
+	read usernum;
+	usernum="${usernum:=0}"
+	if [ "$usernum" == "0" ]; then return; fi;
+
+	userentry="$usernum.${DATA[0]}";
+#	echo -ne "$userentry = $(cat $DB_FILE | egrep "^$userentry")";
+	echo -ne "\n\n\tIšsaugoti pakeitimus?\nBus pašalintas kontaktas: $usernum \n[t/n]: ";
+	read saugoti;
+	saugoti="${saugoti:=n}";
+
+	if [ "$saugoti" != "t" ]; then return; fi;
+
+	sed -i "/^$userentry/d" $DB_FILE; 
+
+	echo;
+
+	## Now we need to shift remaining items up by one level
+	for i in $(cat $DB_FILE| sed -e 's/\..*//g'); do
+		if [[ $i -lt $usernum ]]; then continue;
+		else
+			newnu=$(($i-1));
+			old_val="$i.";
+			new_val="$newnu.";
+			sed -i "s/^$old_val/$new_val/" $DB_FILE;
+		fi;	
+	done;
+## Išvalome panaudotus kintamuosius
+unset usernum userentry saugoti i j newnu old_var new_val;
+}
+
+while(true); do
+	MENIU;
+#	PASALINTI;
+#	MENIU;
+#	NAUJAS;
+#	PAIESKA;
+
+
+done;

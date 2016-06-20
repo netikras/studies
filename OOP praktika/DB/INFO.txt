@@ -1,0 +1,5 @@
+Schema padaryta draw.io internetine programa:
+
+https://www.draw.io
+
+.xml failą galima atverti nuėjus nurodytu adresu.

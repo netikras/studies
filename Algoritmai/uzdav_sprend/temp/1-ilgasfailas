@@ -1,0 +1,34 @@
+netikras@netikras-netbook ~ $ arr[0,0]=kk
+netikras@netikras-netbook ~ $ arr[0,1]=ksdfdsfk
+netikras@netikras-netbook ~ $ arr[1,0]=ks
+netikras@netikras-netbook ~ $ arr[1,1]=ksksksks
+netikras@netikras-netbook ~ $ echo ${arr[1,0]}
+ks
+netikras@netikras-netbook ~ $ echo ${arr[1,1]}
+ksksksks
+netikras@netikras-netbook ~ $ bash --version
+GNU bash, versija 4.2.45(1)-release (i686-pc-linux-gnu)
+Copyright (C) 2011 Free Software Foundation, Inc.
+Licencija GPLv3+: GNU GPL versija 3 arba naujesnė <http://gnu.org/licenses/gpl.html>
+
+Tai yra laisva programinė įranga; jūs esate laisvas keisti ir platinti ją.
+Nėra JOKIOS GARANTIJOS, kiek tik tą leidžia įstatymas.
+netikras@netikras-netbook ~ $ lsusb
+Bus 001 Device 005: ID 2232:1005  
+Bus 001 Device 002: ID 04e8:6860 Samsung Electronics Co., Ltd GT-I9100 Phone [Galaxy S II], GT-I9300 Phone [Galaxy S III], GT-P7500 [Galaxy Tab 10.1]
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 002: ID 046d:c52b Logitech, Inc. Unifying Receiver
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 002: ID 0a5c:219c Broadcom Corp. 
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+netikras@netikras-netbook ~ $ acpi
+Battery 0: Full, 100%
+netikras@netikras-netbook ~ $ apic
+No command 'apic' found, did you mean:
+ Command 'gpic' from package 'groff-base' (main)
+ Command 'pic' from package 'groff-base' (main)
+ Command 'aspic' from package 'aspic' (universe)
+apic: command not found
+

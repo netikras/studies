@@ -1,0 +1,5 @@
+﻿Pasta Bolognese:7,13:Bolognese_pasta:Gardi ir soti pasta su Bolognese padažu, kuris gaminamas pagal senus receptus net 3 dienas!
+Pasta su vištiena:7,00:Chicken_pasta:Vištienos pasta grietinėlės padaže su čiobreliais ir žalumynais
+Buffalo šonkauliukai:12,49:Buffalo_ribs:Bafalo šonkauliukai su karštu saldžiarūgščiu ir pomidorų padažu
+Buffalo sparneliai:12,49:Buffalo_wings:Bafalo sparneliai su karštu saldžiarūgščiu ir pomidorų padažu
+Jautienos didkepsnis:23,99:Steak:Jautienos didkepsnis su virtomis apkeptomis bulvėmis ir pipiriniu padažu

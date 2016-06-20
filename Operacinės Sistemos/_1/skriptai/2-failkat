@@ -1,0 +1,55 @@
+#!/bin/bash
+
+<<-DESCRIPTION
+2. Sudarykite shell’o procedurą, kuri priimtų failo vardą kaip argumentą, tikrintų einamąjį katalogą ir:
+	• paprašytų įvesti failo vardą, jei nurodyto failo nėra einamajame kataloge;
+	• nustatytų, ar nurodytas argumentas yra failas ar katalogas;
+	• ustatytų šio failo prieinamumo galimybes.
+DESCRIPTION
+if [ "$1" == "" ]; then echo -ne "\n\tPamiršai įvest failą... Įvesk jį dabar \n\tarba įvesk 'q', jei nori baigti:\n> ";
+	read failas;
+else
+	failas="$1";
+fi;
+
+
+while :; do
+
+acce=$(stat $failas 2>/dev/null|grep "Access: (");  
+data=$(echo $acce|sed s'/(\|)\|\// /g'|awk '{print $3" "$6" "$9}');
+
+type_=$(stat $failas 2>/dev/null|grep Size:|sed s'/^.*IO Block: [0-9]* *//');
+
+## IF USER DESIRES TO QUIT ##
+if [ "$failas" == "q" ]; then exit 2; fi;
+
+## IF FILE DOES NOT EXIST ##
+if [ "$data" == "" ]; then
+	echo -ne "Nerandu tokio failo. Pasitikslink adresą ir vesk iš naujo. Įvesk 'q' jei nori išeiti.\n";
+	read -p '> ' failas;
+	continue;
+fi;
+
+
+## IF EVERYTHING IS FINE ##
+perm="$(echo $data | awk '{print $1}'|sed s/^.//)";
+perm_u="$(echo $perm|sed s'/......$//')";
+perm_g="$(echo $perm|sed s'/...$//'|sed s'/...$//')";
+perm_o="$(echo $perm|sed s'/^......//')";
+own_user="$(echo $data|awk '{print $2}')";
+own_group="$(echo $data | awk '{print $3}')";
+
+member_bol=$(groups|grep -c -w $own_group);g_ok=""; if [ "$member_bol" == "0" ]; then g_ok="ne"; fi;
+user_bol=$(whoami|grep -c -w own_user);
+
+
+
+echo -ne "\t$failas yra $type_\n\n";
+echo -ne "Leidimai ($failas): $perm\n\
+\tVartotojui $own_user:\t$perm_u\n\
+\tGrupei     $own_group:\t$perm_g\n\
+\tKitiems:      \t\t$perm_o\n\n";
+echo -ne "Tavo vartotojas '$(whoami)' $(echo -n $g_ok)priklauso grupei '$own_group'\n\n";
+
+break;
+done;

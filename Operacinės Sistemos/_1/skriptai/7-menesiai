@@ -1,0 +1,53 @@
+#!/bin/bash
+
+<<-DESCRIPTION
+7. Sudarykite shell’o procedūrą, kuri priimtų argumentą - mėnesio-numerį ir
+	spausdintų atitinkamo mėnesio vardą (patartina naudoti case konstrukciją).
+
+## Mano asmenine nuomone efektyviau būtų tiesiog surašyti visus mėnesius į masyvą i
+##   atspausdinti masyvo elementą su indeksu $1 (mėnesio numeris).
+DESCRIPTION
+
+case $1 in
+	"1")
+		echo Sausis;
+	;;
+	"2")
+		echo Vasaris;
+	;;
+	"3")
+		echo Kovas;
+	;;
+	"4")
+		echo Balandis;
+	;;
+	"5")
+		echo Gegužė;
+	;;
+	"6")
+		echo Birželis;
+	;;
+	"7")
+		echo Liepa;
+	;;
+	"8")
+		echo Rugpjūtis;
+	;;
+	"9")
+		echo Rugsėjis;
+	;;
+	"10")
+		echo Spalis;
+	;;
+	"11")
+		echo Lapkritis;
+	;;
+	"12")
+		echo Gruodis;
+	;;
+	*)
+		echo "Nesuprantu, kokio mėnesio nori iš manęs...";
+	;;
+	esac;
+exit 1;
+

@@ -1,0 +1,52 @@
+#!/bin/bash
+
+<<-DESCRIPTION
+5. Sudarykite shell’o procedūrą, kuri priimtų "n skaičių" - procedūros argumentų, ir:
+	• patikrintų, ar priimtų argumentų kiekis nėra per mažas, arba nėra per didelis 
+		(šiuo atveju spausdintų pranešimą apie klaidą);
+	• jei argumentų kiekis yra teisingas, tada procedūra turi spausdinti juos atvirkščia 
+		tvarka, bei apskaičiuoti šių argumentų vidurki ir ji atspausdintų.
+DESCRIPTION
+
+
+### Pagrindiniai saugikliai
+if [ "$1" == "" ]; then 
+	echo -ne "\nĮveskite argumentus: pirmąjį - būsimų arg. skaičių, visus kitus - kokius tik norite\n\n"; 
+	exit 1; 
+fi;
+
+if [ "$(echo $1 | grep -c [0-9])" == "0" ]; then
+	echo -ne "\nPirmas argumentas turi būti skaičius!\n";
+	exit 1;
+fi;
+#########
+
+argum=$@;
+
+arg_sk=$1; 	## šiaip kiek pamenu kone visos programavimo kalbos sugeba surasti masyvo dydį. Būtų galima padaryti tiesiog
+		## arg_sk=${#array[@]}, bet jei jau užduotis taip reikalauja....
+
+array=(${argum// / }); ##verčiame String į Array
+
+if [ "$(echo $argum | sed s'/[0-9]//g'|sed s'/^ *//g')" == "" ]; then SUM=0; fi; ## Tikriname ar visi argumentai yra skaičiai
+
+
+## sulyginamas argumentų skaičius
+if [[ ${#array[@]}  -gt $(($arg_sk + 1)) ]]; then
+	echo -ne "\nĮvedėte per daug argumentų\n\n"|grep --color . >&2;
+else if [[ ${#array[@]}  -lt $(($arg_sk + 1)) ]]; then
+	echo -ne "\nĮvedėte per mažai argumentų\n"|grep --color . >&2;
+else
+	echo "Argumentai atvirkščiai:";
+	for ((i=$arg_sk; i>0; i--)); do ## i>0, nes mums nereikalingas pirmasis argumentas.
+		echo -ne "\t${array[$i]}\n";
+		## Jei argumentai tik skaitiniai, skaičiuoti jų sumą vidurkiui
+		if [ $SUM ]; then
+			SUM=$(( $SUM + ${array[$i]} ));
+		fi;
+	done;
+	### Jei argumentai tik skaitiniai ž skaičiuoti vidurkį
+	if [ $SUM ]; then printf "Vidurkis: $(( $SUM / $arg_sk ))\n"; else echo "Negaliu išvesti vidurkio iš neskaitinių argumentų"; fi;
+fi;
+fi;
+exit 0;

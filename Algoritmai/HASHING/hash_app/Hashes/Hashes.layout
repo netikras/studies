@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="algorithms/lookup3.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="88" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="algorithms/MurMur3.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5572" topLine="102" />
+		</Cursor>
+		<Folding>
+			<Collapse line="28" />
+			<Collapse line="33" />
+			<Collapse line="52" />
+			<Collapse line="65" />
+			<Collapse line="78" />
+			<Collapse line="134" />
+		</Folding>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10781" topLine="112" />
+		</Cursor>
+		<Folding>
+			<Collapse line="21" />
+			<Collapse line="28" />
+			<Collapse line="50" />
+			<Collapse line="57" />
+			<Collapse line="66" />
+			<Collapse line="75" />
+			<Collapse line="84" />
+			<Collapse line="93" />
+			<Collapse line="102" />
+			<Collapse line="111" />
+			<Collapse line="123" />
+			<Collapse line="139" />
+			<Collapse line="198" />
+			<Collapse line="222" />
+			<Collapse line="281" />
+		</Folding>
+	</File>
+	<File name="algorithms/SuperFastHash.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2099" topLine="111" />
+		</Cursor>
+	</File>
+	<File name="algorithms/CityHash.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18536" topLine="59" />
+		</Cursor>
+		<Folding>
+			<Collapse line="11" />
+			<Collapse line="17" />
+			<Collapse line="64" />
+			<Collapse line="71" />
+			<Collapse line="82" />
+			<Collapse line="97" />
+			<Collapse line="106" />
+			<Collapse line="114" />
+			<Collapse line="124" />
+			<Collapse line="136" />
+			<Collapse line="146" />
+			<Collapse line="154" />
+		</Folding>
+	</File>
+	<File name="algorithms/lookup3.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2623" topLine="76" />
+		</Cursor>
+	</File>
+	<File name="main.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3686" topLine="56" />
+		</Cursor>
+		<Folding>
+			<Collapse line="27" />
+			<Collapse line="51" />
+			<Collapse line="56" />
+			<Collapse line="76" />
+			<Collapse line="82" />
+			<Collapse line="93" />
+			<Collapse line="127" />
+			<Collapse line="137" />
+			<Collapse line="153" />
+		</Folding>
+	</File>
+	<File name="algorithms/CityHash.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="354" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="algorithms/MurMur3.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="435" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="algorithms/SuperFastHash.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="117" topLine="0" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

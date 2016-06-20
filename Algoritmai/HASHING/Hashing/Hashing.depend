@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1397908674 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/Hashing/main.cpp
+	<iostream>
+	<limits.h>
+	<string.h>
+	<sstream>
+

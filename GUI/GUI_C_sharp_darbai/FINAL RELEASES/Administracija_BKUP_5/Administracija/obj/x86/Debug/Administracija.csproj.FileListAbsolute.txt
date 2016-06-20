@@ -1,0 +1,11 @@
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\bin\Debug\Administracija.exe
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\bin\Debug\Administracija.pdb
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\Administracija.fMAIN.resources
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\Administracija.Properties.Resources.resources
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\Administracija.exe
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\obj\x86\Debug\Administracija.pdb
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\bin\Debug\Administracija.exe.config
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Administracija\Administracija\bin\Debug\LocalDB.sdf

@@ -1,0 +1,5 @@
+﻿Brokolių sriuba:4,59:Broccoli_soup:Gardi brokolių sriuba, pagaminta mūsų virtuvės šefų rankomis
+Mėsos čili sriuba:5,60:Chilli_soup:Aštri mėsos čili sriuba su pupelėmis mėgstantiems aštresnius pojūčius ir iššūkius
+Grybų sriuba:4,40:Mushroom_soup:Lietuvos miškuose rinktų grybų sriuba, sušildysianti žvarbią dieną
+Trinta moliūgų sriuba:5,20:Pumpkin_soup:Gardžiausia mieste trinta moliūgų sriuba, dar žinoma kaip "Tetos Anželikos sriubytė"
+Vištienos sriuba:5,70:Chicken_soup:Šviežia, gardi ir kvapni vištienos sriuba patenkins tiek gurmano kiekvieno skrandį maloniausiais pojūčiais

@@ -1,0 +1,4 @@
+﻿Alus:4,50:Beer:Paskanaukite mūsų aludarių virtu alumi, garsėjančiu visame Pasaulyje
+Viskis:5,20:Scotch:Viskis su ledais maloniam gurkšnojimui kompanijoje aptariant reikalus ar smagiai leidžiant laiką
+Raudonas vynas:4,57:Wine_red:Raudono vyno taurė puikiai tiks su jūsų mėgiamu patiekalu arba be jo.
+Baltas vynas:4,57:Wine_white:Balto vyno taurė puikiai tiks su jūsų mėgiamu patiekalu arba be jo.

@@ -1,0 +1,5 @@
+﻿Juoda arbata:3,59:b_tea:Juoda rinktinių arbatmedžio lapų arbata
+Žalioji arbata:3,59:g_tea:Žalia Juanio arbata žalios arbatos mėgėjams
+Kava Espresso:4,20:espresso:Stipri ir galinga išskirtinio skonio ir aromato kavos pupelių Espresso kava
+Kava Latte:4,79:latte:Mūsų barmenai jums pagamins pačia skaniausią kavą mieste. Netikite? Paragaukite!
+Juoda kava (pienas pasirinktinai):4,57:black_w_milk:Gardi juoda kava, kurią galite užsibalinti šviežiu kaimišku pienu (patiekiamas atskirai)

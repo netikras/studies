@@ -1,0 +1,12 @@
+Aprašyti struktūrą NOTE, turinčią tokius laukus:
+1) Vardas Pavardė;
+2) Telefono numeris;
+3) Gimimo data (masyvas iš trijų skaičių);
+
+
+Struktūros duomenis saugomi teksto byloje. Parašyti programą, vykdančią tokius veiksmus:
+1) Papildyti įrašą iš klaviatūros. Išsaugoti faile pagal gimimo datą;
+2) Įšvesti informaciją apie žmogų, kuriuo telefono numeris įvestas iš klaviatūros;
+3) Jeigu tokio nėra, išvesti atitinkamą pranešimą;
+4) Pašalinti įrašą
+5) Pataisyti įrašą. Pataisius datą, įrašas turi  atsidurti savo vietoje.

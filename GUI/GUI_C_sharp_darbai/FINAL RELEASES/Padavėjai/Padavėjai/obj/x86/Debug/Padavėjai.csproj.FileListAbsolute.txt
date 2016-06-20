@@ -1,0 +1,9 @@
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\bin\Debug\Padavėjai.exe
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\bin\Debug\Padavėjai.pdb
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\Padavėjai.Padavejai.resources
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\Padavėjai.Properties.Resources.resources
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\Padavėjai.exe
+C:\Documents and Settings\Administrator\my documents\visual studio 2010\Projects\Padavėjai\Padavėjai\obj\x86\Debug\Padavėjai.pdb

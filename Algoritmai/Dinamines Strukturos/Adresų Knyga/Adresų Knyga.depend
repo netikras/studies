@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1396300813 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/Dinamines Strukturos/Adresų Knyga/main.cpp
+	<iostream>
+	<fstream>
+	<string.h>
+	<cstdlib>
+	<sstream>
+

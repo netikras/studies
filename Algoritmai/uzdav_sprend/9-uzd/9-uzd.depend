@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1392830175 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/uzdav_sprend/9-uzd/main.cpp
+	<iostream>
+	<fstream>
+	<string.h>
+

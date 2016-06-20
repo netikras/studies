@@ -1,0 +1,5 @@
+﻿Sezario salotos:6,79:Caesar_salad:Cezario salotos su vištiena ir česnakiniu padažu
+Vaisių salotos:7,89:Fruit_salad:Gaivios ir gardžios vaisių salotos
+Graikiškos salotos:6,59:Greek_salad:Graikiškos salotos su fetos sūriu ir gausybe žalumynų
+Pomidorų salsa:5,99:Salsa_salad:Pomidorų salsa jus atgaivins ir pasotins, suteiks naujų jėgų bei gerai nuteiks visai dienai
+Tuno salotos:7,09:Tuna_salad:Tuno salotos su žalumynais, konservuotais kukurūzais ir minkštai virtu kiaušiniu

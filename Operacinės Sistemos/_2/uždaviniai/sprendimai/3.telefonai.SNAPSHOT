@@ -1,0 +1,141 @@
+#!/bin/bash
+
+clear;
+echo -en "\033[?25l";
+
+FOLDER=adresatai;
+DB_FILE=$FOLDER/dbase;
+
+
+cls(){
+echo -en "\033c";
+}
+
+function MENIU {
+	cls;
+	echo -ne "\nSveiki,\nJūs dirbate su \"Telefonknygė v1.0\"\n\nMeniu:\n\
+	1\tSukurti naują kontaktą\n\
+	2\tRedaguoti esamą kontaktą\n\
+	3\tPašalinti kontaktą\n\
+	4\tPaieška\n\
+	\n\
+	0\tIšeiti iš \"Telefonknygė v1.0\"\n\
+> ";
+echo -en "\033[?25l";
+	read pasirinkimas;
+	
+	case $pasirinkimas in
+		0) cls;exit 1;;
+		1) NAUJAS;;
+		2) REDAGUOTI;;
+		3) PASALINTI;;
+		4) PAIESKA;;
+	esac
+}
+
+function NAUJAS {
+	cls;echo "Naujas Kontaktas";
+	
+	last_no="$(cat $DB_FILE | wc -l)";
+	next_no=$(($last_no+1));
+	echo -ne "\n\n\tVardas: ";
+	read vardas; [ "$vardas" == "" ] && vardas='-';
+	echo -ne "\tPavardė: ";
+	read pavarde; [ "$pavarde" == "" ] && pavarde='-';
+	echo -ne "\tAsmeninis tel. nr.: ";
+	read asmeninis_nr; [ "$asmeninis_nr" == "" ] && asmeninis_nr='-';
+	echo -ne "\tDarbo tel. nr.: ";
+	read darbo_nr; [ "$darbo_nr" == "" ] && darbo_nr='-';
+	echo -ne "\tAdresas: ";
+	read adresas; [ "$adresas" == "" ] && adresas='-';
+	echo -ne "\tKita info: ";
+	read kita; [ "$kita" == "" ] && kita='-';
+	
+	BUFFER="\_:FN:$next_no.$vardas\_:LN:$pavarde\_:PN:$asmeninis_nr\_:WN:$darbo_nr\_:AD:$adresas\_:OT:$kita\n";
+	echo -ne $BUFFER >>$DB_FILE;
+	
+	#echo $BUFFER;
+}
+
+function PAIESKA {
+	if [  $1 ]; then fraze="$1"; else 
+		cls;echo "Paieška";
+		echo -ne "\n\n\tĮveskite ieškomą frazę: ";
+		read fraze;
+	fi;
+
+	for i in $(cat $DB_FILE 2>/dev/null| grep -i $fraze 2>/dev/null); do
+		echo -ne "\t Vardas:\t$( echo $i | sed s'/\\\_:FN://' 2>/dev/null | sed s'/\\\_:.*$/\n/')\n";
+		echo -ne "\t Pavardė:\t$( echo $i | sed s'/^.*\\\_:LN://' 2>/dev/null | sed s'/\\\_:.*$/\n/')\n";
+		echo -ne "\t Asmeninis:\t$( echo $i | sed s'/^.*\\\_:PN://' 2>/dev/null | sed s'/\\\_:.*$/\n/')\n";
+		echo -ne "\t Darbo:\t\t$( echo $i | sed s'/^.*\\\_:WN://' 2>/dev/null | sed s'/\\\_:.*$/\n/')\n";
+		echo -ne "\t Adresas:\t$( echo $i | sed s'/^.*\\\_:AD://' 2>/dev/null | sed s'/\\\_:.*$/\n/')\n";
+		echo -ne "\t Kita info:\t$( echo $i | sed s'/^.*\\\_:OT://' 2>/dev/null | sed s'/\\\_:.*$/\n/')\n";
+		echo;
+	done;
+	if [ -z $1 ]; then read NULL; fi;
+}
+
+function REDAGUOTI {
+	cls; echo "Redaguoti kontaktą";
+	PAIESKA _:FN| egrep "Vardas|Pavardė" | tr '\n' ' '|sed -e 's/Vardas:/\n/g' -e 's/Pavardė://g';
+        echo -ne "\n\nPasirinkite vartotojo numerį, kurį norite redaguoti (įveskite 0 kad išeitumėte): ";
+        read usernum;
+        if [ "$usernum" == "0" ]; then return; fi;
+        userentry="\_:FN:$usernum";
+        echo;
+	PAIESKA "_:FN:$usernum";
+	echo -ne "\n\nĮveskite naujus duomenis:";
+        echo -ne "\n\n\tVardas: ";
+        read vardas; [ "$vardas" == "" ] && vardas='-';
+        echo -ne "\tPavardė: ";
+        read pavarde; [ "$pavarde" == "" ] && pavarde='-';
+        echo -ne "\tAsmeninis tel. nr.: ";
+        read asmeninis_nr; [ "$asmeninis_nr" == "" ] && asmeninis_nr='-';
+        echo -ne "\tDarbo tel. nr.: ";
+        read darbo_nr; [ "$darbo_nr" == "" ] && darbo_nr='-';
+	echo -ne "\tAdresas: ";
+	read adresas;[ "$adresas" == "" ] && adresas='-';
+        echo -ne "\tKita info: ";
+        read kita; [ "$kita" == "" ] && kita='-';
+	
+	what_repl="_:FN:$usernum";
+	
+        BUFFER="_:FN:$usernum.$vardas\\\_:LN:$pavarde\\\_:PN:$asmeninis_nr\\\_:WN:$darbo_nr\\\_:AD:$adresas\\\_:OT:$kita";
+	sed -i "s/$what_repl.*\$/$BUFFER/" $DB_FILE;
+
+	
+
+}
+
+function PASALINTI {
+	cls; echo "Pašalinti adresatą:";
+	PAIESKA FN| egrep "Vardas|Pavardė" | tr '\n' ' '|sed -e 's/Vardas:/\n/g' -e 's/Pavardė://g';
+	echo -ne "\n\nPasirinkite vartotojo numerį, kurį norite šalinti (įveskite 0 kad išeitumėte): ";
+	read usernum;
+	if [ "$usernum" == "0" ]; then return; fi;
+	userentry="\_:FN:$usernum";
+	sed -i /"$userentry"/d $DB_FILE;
+	echo;
+
+	## Now we need to shift remaining items up by one level
+	for i in $(cat $DB_FILE| sed -e 's/^.*_:FN://g' -e 's/\..*$//g'); do
+		if [[ $i -lt $usernum ]]; then continue;
+		else
+			newnu=$(($i-1));
+			old_val="_:FN:$i";
+			new_val="_:FN:$newnu";
+			sed -i s/"$old_val"/"$new_val"/ $DB_FILE;
+		fi;	
+	done;
+}
+
+while(true); do
+	MENIU;
+#	PASALINTI;
+#	MENIU;
+#	NAUJAS;
+#	PAIESKA;
+
+
+done;

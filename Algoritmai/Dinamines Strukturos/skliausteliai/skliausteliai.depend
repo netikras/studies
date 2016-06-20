@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1393064355 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/Dinamines Strukturos/skliausteliai/main.cpp
+	<iostream>
+	<cstdlib>
+	<string.h>
+

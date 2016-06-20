@@ -1,0 +1,19 @@
+Trečia praktinė užduotis
+
+Sukurkite viešbučio svečių registravimo programą. Šia programa naudosis viešbučio administratorė.
+
+Reikalavimai:
+
+Naujo kliento registravimas (vardas, pavardė, dokumento, įrodančio tapatybę tipas ir numeris, gyvenamoji vieta, mokėjimo kortelės numeris, viešnagės laikas.
+Užregistruojant klientą turi būti automatiškai paskiriamas laisvas kambario numeris, esant reikalui kambario numeris gali būti pakeistas rankiniu būdu. Kambariai yra rūkoriams ir nerūkoriams. 20 vienviečių kambarių nerūkantiems ir 5 vienviečiai - rūkantiems; 15 dviviečių kambarių nerūkantiems ir 3 rūkantiems; 10 triviečių kambarių nerūkantiems ir 2 triviečiai - rūkantiems.
+Fiksuojamos baro išlaidos.
+Redaguojamos kainos: kambarių ir kitų paslaugų.
+Atskirų sąskaitų išrašymas kambariui ir baro išlaidoms.
+Peržiūrėti laisvų / užimtų kambarių sąrašą.
+Kambario rezervavimas
+
+
+
+Atsiskaitymas antrąją gegužės mėn. savaitę.
+
+

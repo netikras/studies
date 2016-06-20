@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1398865387 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/main.cpp
+	<iostream>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+	<fstream>
+	<time.h>
+	<map>
+	"main.h"
+
+1398500300 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/CityHash.cpp
+	<algorithm>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+	<iostream>
+	"CityHash.h"
+	<byteswap.h>
+	<libkern/OSByteOrder.h>
+	"citycrc.h"
+	<nmmintrin.h>
+
+1398500716 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/MurMur3.cpp
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<iostream>
+
+1398504940 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/SuperFastHash.cpp
+	"SuperFastHash.h"
+	<stdlib.h>
+	<stdint.h>
+	<iostream>
+	<string.h>
+
+1398499773 source:/home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/lookup3.cpp
+	<iostream>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+
+1398502355 /home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/CityHash.h
+	<algorithm>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+	<iostream>
+
+1398502355 /home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/lookup3.h
+	<stdint.h>
+
+1398509648 /home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/MurMur3.h
+	<stdint.h>
+
+1398509502 /home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/algorithms/SuperFastHash.h
+	<stdint.h>
+
+1398844123 /home/netikras/Dropbox/Dokumentai/Studijos/Algoritmai/HASHING/hash_app/Hashes/main.h
+	<stdint.h>
+	<sstream>
+	<string.h>
+	<iostream>
+	<fstream>
+	"algorithms\\CityHash.h"
+	"algorithms\\lookup3.h"
+	"algorithms\\MurMur3.h"
+	"algorithms\\SuperFastHash.h"
+	"algorithms/CityHash.h"
+	"algorithms/lookup3.h"
+	"algorithms/MurMur3.h"
+	"algorithms/SuperFastHash.h"
+

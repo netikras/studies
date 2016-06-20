@@ -1,0 +1,11 @@
+Antra praktinė užduotis
+
+Restoranas siekdamas gerinti klientų aptarnavimo kokybę nusprendë įdiegti informacinę sistemą „e-meniu“, leidžiančią atsisakyti įprastinių popierinių meniu. Klientai nuo šiol užsakymus padavėjoms pateiks elektroniniu būdu. Padavėjos akimirksniu galės matyti restorano lankytojų pateikiamus užsakymus ir juos iš karto vykdyti. Restorane iš viso yra 18 staliukų padalintų į tris zonas, kiekvienoje zonoje yra po 6 staliukus. Kiekviena zona turi atskirus lietimui jautrius ekranus Logic Controls LE1000 15".
+
+Jūsų užduotis sukurti padavėjoms skirtą „e-meniu“ sistemos dalį, kurioje būtų realizuotos šios funkcijos:
+
+Matytųsi lankytojo atlikti veiksmai: padavėjos iškvietimas, užsakymo pateikimas, pageidavimas apmokėti sąskaitą
+Užsakymo peržiūra
+Užsakymo patvirtinimas
+Sąskaitos apmokėjimo patvirtinimas ir čekio išrašymas
+

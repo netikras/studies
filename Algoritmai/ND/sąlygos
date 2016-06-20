@@ -1,0 +1,24 @@
+PIN13
+Algoritmai ir duomenų struktūros
+Namų darbas 
+
+1.	Išnagrinėti įrašo duomenų tipą (struct). Parašyti programą. Tegul žinomi kiekvieno iš 22 žmonių ūgis ir lytis. Rasti vidutinį vyrų ūgį.
+
+2.	Rasti mažiausią bendrą sveikųjų skaičių masyvo N elementų kartotinį.
+
+3.	Apskaičiuoti penktadienių, kurie tenka mėnesio 13-tai dienai per visą XXI amžių, kiekį.
+
+4.	Panaudojant funkcijas parašyti programą, kuri grąžina nuorodą į vienmačio masyvo max elementą, kuriame yra vien tik neigiami skaičiai.
+
+5.	Duota tam tikra skaitmenų seka, nemažiau kaip iš 9 narių. Parašykite programą, kuri nustatys, kokį maksimalų skaičių galima sudaryti iš šios sekos, su sąlyga, kad jis turi dalintis iš 15. 
+
+6.	Duotas natūrinis skaičius n ir realūs skaičiai x1, ..., xn (n≥2). Rasti seką x1-xn, x2-xn, ..., xn-1-xn. Uždavinį išspręsti panaudojant sąrašą.
+
+7.	Parašykite programą, kuri patikrins, ar teisingai išraiškoje yra sudėlioti skliaustai, kurie gali būti 3-jų tipų: (), {} ir [].
+
+8.	Sukurkite algoritmą ir parašykite programą, kuri romėniškus skaičius pavers arabiškais.
+
+9.	Išnagrinėti, kas yra perkraunamos funkcijos. Parašyti programą panaudojant perkraunamas funkcijas, kuri atliks sveikųjų, realiųjų ir simbolinių duomenų sudėtį. Iškviesti šią funkciją programoje su skirtingu parametrų kiekiu.
+
+10.	Parašyti pačią trumpiausią programą, kurioje nenaudojami įvedimo operatoriai. Programa į ekraną turi išvesti tikslų savo paties kodą.
+

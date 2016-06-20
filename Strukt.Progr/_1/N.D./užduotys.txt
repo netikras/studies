@@ -1,0 +1,18 @@
+PIN13
+Struktūrinio programavimo užduotys
+
+1. Iš visų skaitmenų nuo 1 iki 9 sudarykite tris triženklius skaičius, kurių sandauga būtų a) mažiausia b) didžiausia,
+2. Nustatykite pirmadienių ir penktadienių kiekį pagal metų laikus 2012 metams (n metams).
+3. Duotas sveikas skaičius n>2. Atspausdinti visus pirminius skaičius intervale [2, n].
+4. Parašyti funkciją ir ją pritaikyti programoje, kuri užpildo vienmatį sveikųjų skaičių masyvą atsitiktiniais skaičiais intervale nuo 0 iki N.
+5. Parašykite programą, kuri patikrins, ar skaičius N yra dviejų pirminių skaičių suma.
+6. Parašykite programą, kuri užpildo NxN matricą skaičiais nuo 1 iki N^2 pagal spiralę, pradedant nuo kairiojo viršutinio kampo.
+7. Funkcijos, kuri generuoja atsitiktinius skaičius, pagalba aprašyti žaidimo kauliuką, kuris po metimo išveda skaičių iš intervalo 1...6.
+8. Duotas dvimatis masyvas iš 15 eilučių ir 2 stulpelių. Rasti minimalią sumą elementų dvejuose gretimose eilutėse.
+9. Duotas dvimatis masyvas 9x9. Rasti skaičių seką, kuri gaunasi skaitant šį masyvą spirale (pav.: spirale.png) 
+10. Duotas dvimatis masyvas:
+	a. Rasti k-tojo stulpelio visų elementų sumą.
+	b. Rasti minimalių elementų kiekį.
+	c. Rasti didžiausią stulpelių elementų sumą. Uždavinį išspręsti dviem būdais.
+	d. Didžiausią masyvo elementą sukeisti vietomis su mažiausiu.
+	e. Surūšiuoti didėjančiai lyginius masyvo elementus. Lyginių elementų indeksai yra pastovūs.

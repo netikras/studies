@@ -1,0 +1,41 @@
+#!/bin/bash
+
+<<-DESCRIPTION
+1. Sudarykite procedūrą, kuri spausdintų pavadinimus tų failų, kurie yra kataloge KLASE ir turi daugiau negu 20 žodžių.
+DESCRIPTION
+
+echo -ne "\nSveiki,Pamėginsiu rasti visus failus kataloge KLASE, kuriuose yra >20 žodžių\n\n";
+
+#path="$(pwd)/KLASE";
+
+if [ "$(ls -l | egrep -c ^d.*KLASE)" == "0" ]; then
+	echo -ne "Kur katalogas KLASE? Nurodyk pilną adresą iki jo:\n>";
+
+	read  path;
+	path="$(echo "$path"|sed s'/\/$//')";
+	if [ "$(ls -l "$path" | egrep -c ^d.*KLASE)" == "0" ]; then
+		if [ "$(ls -ld "$path" | egrep -c ^d.*KLASE)" == "0" ]; then
+			echo -ne "\nPasitikrink, ar tikrai toks katalogas sukurtas ir bandyk dar kartą\n";
+			echo -ne "  arba nukopijuok skriptą šalia katalogo KLASĖ ir paleisk jį tada.\n";
+			exit 1;
+		fi;
+	else
+		path="$path/KLASE";
+	fi;
+else path="$(pwd)/KLASE";
+
+fi;
+
+echo -ne "Rastas katalogas:\n\t$path\n\nRasti failai (>20 žodžių):\n";
+
+
+for i in $(ls "$path"); do
+	if [ "$(file "$path/$i"|grep -ci text)" == "0" ]; then ## Jeigu failas nėra tekstinis
+		echo "KLAIDA: $path/$i   nėra tekstinis failas"|grep --color . >&2;
+		continue;
+	fi;
+	if [[ $(cat "$path/$i" | wc -w) -gt 20 ]]; then
+		echo "$path/$i";
+	fi;
+done;
+echo;

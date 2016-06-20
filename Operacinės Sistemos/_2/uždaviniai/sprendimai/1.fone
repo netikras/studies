@@ -1,0 +1,22 @@
+#!/bin/bash
+
+<<-COMMENT
+Veikia fone ir kas kažkiek laiko atlieka kažką
+COMMENT
+
+
+
+echo "Įveskite, kas kiek laiko bus atliekamas darbas";
+read timer;
+
+for ((i=0; i<100; i++)); do
+	
+	logger "Įrašas: $(uptime)";
+
+	sleep $timer;
+	
+	
+done &
+
+tail -f /var/log/syslog;
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+
+if [ "$1" == "" ]; then
+	echo "Nepateikėte teigiamo skaičiaus!"|grep --color . >&2;
+	exit 1;
+fi;
+
+skaicius=$1;
+riba=$(( $skaicius / 2 ));
+>dalikliai;
+echo "Dalikliai:" >> dalikliai;
+for i in $(seq 1 $riba); do
+	if [[ $(( $skaicius % $i )) -eq 0 ]]; then echo $i >> dalikliai; fi;
+	
+done;
+
+cat dalikliai;

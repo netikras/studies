@@ -1,0 +1,6 @@
+﻿Briušeta:3,15:Bruschetta:Gardi briušeta pamalonins ir akis, ir liežuvį, ir skrandį
+Sūrio lazdelės:5,50:Cheese_sticks:Sūrio lazdelės puikiai tiks prie alaus
+Fokacija:4,39:Focaccia:Gardi itališka duonelė su alyvuogėmis užkandžiams
+Gruzdintos bulvytės:5,60:Fried_chips:Bulvytės fry iš lietuviškų bulvių
+Svogūnų žiedai:4,50:Onion_rings:Virtuvės šefų šedevras - svogūnų žiedai apkepti tešloje pagal specialų receptą
+Tapenados:3,45:Tapenade:Gardžiausios tapenados su marinuotomis alyvuogėmis tiesiai iš Italijos

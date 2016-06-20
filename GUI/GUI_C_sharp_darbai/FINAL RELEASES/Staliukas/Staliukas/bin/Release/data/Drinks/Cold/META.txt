@@ -1,0 +1,5 @@
+﻿7-up:5,12:7up:Gaivusis gėrimas 7-Up
+CocaCola:5,22:Cola:Gaivusis gėrimas Coca-Cola
+Mineralinis vanduo:1,20:Mineral:Mineralinis vanduo Vytautas
+Mėtų vanduo:1,20:Mint_water:Ąsotis šalto vandens su citrina ir mėta
+Apelsinų sultys:3,69:Orange_juice:Stiklinė šviežiai išspaustų apelsinų sulčių
